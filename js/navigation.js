@@ -143,15 +143,27 @@
           <h4>Contribute</h4>
           <ul>
             <li><a href="submit.html">Submit a Spell</a></li>
-            <li><a href="https://github.com/initium-builders/claris-magic" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/InitiumBuilders/Claris-Magic" target="_blank" rel="noopener">GitHub</a></li>
             <li><a href="CONTRIBUTING.md" target="_blank">Contributing Guide</a></li>
             <li><a href="LICENSE" target="_blank">MIT License</a></li>
           </ul>
         </div>
       </div>
+      <div class="footer-tip">
+        <div class="tip-container">
+          <p class="tip-label">🛡️ Built by <a href="https://x.com/BuiltByAugust" target="_blank" rel="noopener" style="color:var(--lux-gold);">August James</a></p>
+          <p class="tip-desc">If this Grimoire helped you, tip in $DASH via Dash Evolution:</p>
+          <div class="tip-address">
+            <span class="tip-badge">DASH</span>
+            <code class="tip-username">@August</code>
+            <button class="tip-copy-btn" onclick="navigator.clipboard.writeText('@August').then(()=>{this.textContent='Copied! ✨';setTimeout(()=>{this.textContent='Copy'},1500)})">Copy</button>
+          </div>
+          <p style="font-size:0.7rem; color:var(--text-muted); margin-top:0.5rem;">Send to <strong>@August</strong> on <a href="https://www.dash.org/platform/" target="_blank" rel="noopener" style="color:var(--motus-teal);">Dash Platform</a></p>
+        </div>
+      </div>
       <div class="footer-bottom">
         <p>© 2026 Initium Builders · Claris AI · AVARI 🔥 · MIT License</p>
-        <p>Built with 🔮 and genuine belief that security should be beautiful.</p>
+        <p>Built with 🔮 by <a href="https://x.com/BuiltByAugust" target="_blank" rel="noopener" style="color:var(--lux-gold);">August James</a> & AVARI</p>
         <span class="footer-fox" id="footer-fox" title="...">🦊</span>
       </div>
     </footer>

@@ -248,6 +248,78 @@ body { padding-top: var(--nav-height); }
 
 .footer-fox:hover { opacity: 0.15; }
 
+/* ---- TIP SECTION ---- */
+.footer-tip {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(0,141,228,0.08), rgba(0,141,228,0.03));
+  border: 1px solid rgba(0,141,228,0.2);
+  border-radius: var(--card-radius);
+  text-align: center;
+}
+
+.tip-container { max-width: 500px; margin: 0 auto; }
+
+.tip-label {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.tip-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.tip-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,141,228,0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+.tip-badge {
+  background: linear-gradient(135deg, #008de4, #00aaff);
+  color: white;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.tip-username {
+  font-family: var(--font-code);
+  font-size: 1.1rem;
+  color: #00aaff;
+  background: transparent;
+  padding: 0;
+}
+
+.tip-copy-btn {
+  background: rgba(0,141,228,0.15);
+  border: 1px solid rgba(0,141,228,0.3);
+  color: var(--text-secondary);
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tip-copy-btn:hover {
+  background: rgba(0,141,228,0.3);
+  color: white;
+}
+
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }

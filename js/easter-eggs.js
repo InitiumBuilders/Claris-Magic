@@ -398,6 +398,109 @@
     });
   }
 
+  // ---- 13. Idle Wisdom — If you stop interacting for 60 seconds, a quiet wisdom fades in at the bottom ----
+  function initIdleWisdom() {
+    const wisdoms = [
+      "The strongest encryption is patience.",
+      "Every system you protect is someone's livelihood.",
+      "The attacker only needs to be right once. You need to be right every time. But you have something they don't: you care about what you're protecting.",
+      "Security is not a product. It's a process. — Bruce Schneier",
+      "The best time to patch was yesterday. The second best time is now.",
+      "In every organization, there is one person who actually understands the threat model. Find them. Buy them coffee.",
+      "The vulnerability you're most afraid to check is the one you should check first.",
+      "Move at the speed of trust.",
+      "What you pay attention to grows.",
+    ];
+    let idleTimer = null;
+    let wisdomShown = false;
+
+    function resetIdle() {
+      clearTimeout(idleTimer);
+      // Remove existing wisdom
+      const existing = document.getElementById('idle-wisdom');
+      if (existing) { existing.style.opacity = '0'; setTimeout(() => existing.remove(), 1000); }
+      wisdomShown = false;
+
+      idleTimer = setTimeout(() => {
+        if (wisdomShown) return;
+        wisdomShown = true;
+        const el = document.createElement('div');
+        el.id = 'idle-wisdom';
+        el.textContent = wisdoms[Math.floor(Math.random() * wisdoms.length)];
+        el.style.cssText = `
+          position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+          background:rgba(10,10,15,0.95); border:1px solid rgba(184,41,255,0.2);
+          color:var(--text-secondary,#9090a8); padding:0.8rem 1.5rem; border-radius:12px;
+          font-size:0.85rem; font-style:italic; font-family:'Cinzel',serif;
+          z-index:999; pointer-events:none; max-width:500px; text-align:center;
+          opacity:0; transition:opacity 2s ease; box-shadow:0 4px 20px rgba(184,41,255,0.1);
+        `;
+        document.body.appendChild(el);
+        requestAnimationFrame(() => { el.style.opacity = '1'; });
+        setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 2000); }, 8000);
+      }, 60000);
+    }
+
+    ['mousemove', 'keydown', 'scroll', 'touchstart', 'click'].forEach(evt => {
+      document.addEventListener(evt, resetIdle, { passive: true });
+    });
+    resetIdle();
+  }
+
+  // ---- 14. The Timestamp — At exactly :00 seconds of any minute, a brief clock glyph pulses in the corner ----
+  function initTimestampMagic() {
+    function checkTime() {
+      const now = new Date();
+      if (now.getSeconds() === 0) {
+        const el = document.createElement('div');
+        const hour = now.getHours();
+        const isLateNight = hour >= 23 || hour < 5;
+        const msg = isLateNight ? '🌙 The late hour favors the dedicated mage.' : '⏰ Another minute. Another chance to build.';
+        el.textContent = msg;
+        el.style.cssText = `
+          position:fixed; top:80px; right:20px;
+          background:rgba(10,10,15,0.9); border:1px solid rgba(255,215,0,0.2);
+          color:#ffd700; padding:0.5rem 1rem; border-radius:8px;
+          font-size:0.75rem; font-family:'Fira Code',monospace;
+          z-index:998; pointer-events:none;
+          opacity:0; transition:opacity 0.5s ease;
+          box-shadow:0 2px 12px rgba(255,215,0,0.1);
+        `;
+        document.body.appendChild(el);
+        requestAnimationFrame(() => { el.style.opacity = '1'; });
+        setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 1000); }, 3000);
+      }
+    }
+    setInterval(checkTime, 1000);
+  }
+
+  // ---- 15. The Scroll Depth Achievement — Scrolling through 90%+ of any page triggers a one-time achievement ----
+  function initScrollAchievement() {
+    let achieved = false;
+    window.addEventListener('scroll', () => {
+      if (achieved) return;
+      const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+      if (scrollPercent > 0.92) {
+        achieved = true;
+        const el = document.createElement('div');
+        el.innerHTML = '🏆 <strong>Achievement Unlocked:</strong> Deep Reader — You explored the full depth of this page.';
+        el.style.cssText = `
+          position:fixed; bottom:20px; right:20px;
+          background:linear-gradient(135deg, rgba(255,215,0,0.12), rgba(184,41,255,0.08));
+          border:1px solid rgba(255,215,0,0.3);
+          color:#ffd700; padding:0.75rem 1.25rem; border-radius:10px;
+          font-size:0.8rem; font-family:'Fira Code',monospace;
+          z-index:999; pointer-events:none; max-width:350px;
+          opacity:0; transition:opacity 0.5s ease;
+          box-shadow:0 4px 20px rgba(255,215,0,0.15);
+        `;
+        document.body.appendChild(el);
+        requestAnimationFrame(() => { el.style.opacity = '1'; });
+        setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 1000); }, 5000);
+      }
+    }, { passive: true });
+  }
+
   function init() {
     initSigilEasterEgg();
     initMotusTyping();
@@ -410,6 +513,9 @@
     initKonamiCode();
     initSpellMemorize();
     initTripleClickTool();
+    initIdleWisdom();
+    initTimestampMagic();
+    initScrollAchievement();
   }
 
   if (document.readyState === 'loading') {
