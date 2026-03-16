@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wicked Problems — Claris Magic</title>
+  <meta name="description" content="The hardest unsolved problems in cybersecurity, mapped to spells. The wishes. The moonshots. The things we're still learning to dream.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="page-content">
+
+  <section class="wicked-hero">
+    <div class="hero-orb hero-orb-1" style="background:radial-gradient(circle,rgba(255,68,68,0.12) 0%,transparent 70%);"></div>
+    <div class="hero-eyebrow" style="color:var(--ember-red);">The Hardest Problems</div>
+    <h1 style="background:linear-gradient(135deg,var(--ember-red),#ff9944,var(--lux-gold)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Wicked Problems</h1>
+    <p style="color:var(--text-secondary); font-style:italic; font-size:1.1rem; margin-top:1rem;">These are not spells that exist. These are spells we wish existed. The thorniest, most persistent, most consequential unsolved challenges in cybersecurity — each mapped to what a magical solution would look like, and honest analysis of where we actually are.</p>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:1rem;">Each spell ends with a question. These are not rhetorical. Think about them.</p>
+  </section>
+
+  <div class="container" id="wicked-container">
+    <!-- Rendered by JS -->
+    <div style="text-align:center; padding:3rem; color:var(--text-muted);">Loading wicked problems...</div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/spells-data.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/easter-eggs.js"></script>
+<script>
+(function() {
+  function getRatingBadge(rating) {
+    const map = {
+      built: { label: '🟢 BUILT', cls: 'badge-built' },
+      buildable: { label: '🔵 BUILDABLE', cls: 'badge-buildable' },
+      emerging: { label: '🟡 EMERGING', cls: 'badge-emerging' },
+      arcane: { label: '🔴 ARCANE', cls: 'badge-arcane' },
+    };
+    const r = map[rating] || map.built;
+    return `<span class="badge ${r.cls}" data-rating="${rating}">${r.label}</span>`;
+  }
+
+  function renderWickedSpell(spell) {
+    const techs = spell.mapping.split(',').map(t => t.trim()).filter(Boolean);
+    return `
+    <div class="wicked-card">
+      <div class="wicked-card-header">
+        <div>
+          <div class="wicked-spell-name">${spell.name}</div>
+        </div>
+        <div class="wicked-rating" data-rating="${spell.rating}">
+          ${getRatingBadge(spell.rating)}
+        </div>
+      </div>
+      <p class="wicked-desc">${spell.desc}</p>
+      <div class="wicked-mapping">
+        ${techs.map(t => `<span class="wicked-tech">${t}</span>`).join('')}
+      </div>
+      <div class="wicked-analysis">
+        <h5>Could This Be Real?</h5>
+        <p>${spell.analysis}</p>
+      </div>
+      <div class="wicked-question">${spell.question}</div>
+    </div>
+    `;
+  }
+
+  function renderWicked() {
+    const container = document.getElementById('wicked-container');
+    if (!container || !window.SPELLS) return;
+
+    const spells = window.SPELLS.wicked || [];
+    const categories = {};
+    spells.forEach(s => {
+      if (!categories[s.category]) categories[s.category] = [];
+      categories[s.category].push(s);
+    });
+
+    let html = '';
+    Object.entries(categories).forEach(([cat, catSpells]) => {
+      html += `
+      <div class="wicked-category">
+        <h3 class="wicked-category-title">⚔️ ${cat}</h3>
+        ${catSpells.map(renderWickedSpell).join('')}
+      </div>
+      `;
+    });
+
+    html += `
+    <div class="grimoire-quote" style="margin-top:3rem; margin-bottom:3rem;">
+      The mage who says "this problem cannot be solved" has stopped being a mage. Every unbreakable cipher was once unbreakable. Every impossible authentication was once impossible. The wicked problems of today are the solved problems of tomorrow — but only if someone refuses to stop asking.
+      <cite>— Grimoire of the Guardian Archmage, Vol. IV</cite>
+    </div>
+    `;
+
+    container.innerHTML = html;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderWicked);
+  } else {
+    renderWicked();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+/* ============================================
+   ANIMATIONS.CSS — Particles, Glows, Effects
+   ============================================ */
+
+/* ---- STAR FIELD ---- */
+.stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: twinkle var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--min-op, 0.1); transform: scale(1); }
+  50%       { opacity: var(--max-op, 0.6); transform: scale(1.3); }
+}
+
+/* Colored ambient stars */
+.star-purple { background: var(--shadow-purple); box-shadow: 0 0 4px var(--shadow-purple); }
+.star-teal   { background: var(--motus-teal);   box-shadow: 0 0 4px var(--motus-teal); }
+.star-gold   { background: var(--lux-gold);     box-shadow: 0 0 4px var(--lux-gold); }
+.star-ember  { background: var(--ember-red);    box-shadow: 0 0 4px var(--ember-red); }
+
+/* ---- SCHOOL GLOWS ---- */
+.glow-lux    { box-shadow: 0 0 40px rgba(255,215,0,0.08); }
+.glow-shadow { box-shadow: 0 0 40px rgba(184,41,255,0.08); }
+.glow-motus  { box-shadow: 0 0 40px rgba(0,255,204,0.08); }
+
+/* ---- HERO GRADIENT ORB ---- */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: orbPulse 6s ease-in-out infinite alternate;
+}
+
+.hero-orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(184,41,255,0.15) 0%, transparent 70%);
+  top: -200px; left: -100px;
+}
+
+.hero-orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,255,204,0.1) 0%, transparent 70%);
+  top: 100px; right: -150px;
+}
+
+.hero-orb-3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 70%);
+  bottom: -100px; left: 30%;
+}
+
+@keyframes orbPulse {
+  from { opacity: 0.6; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.1); }
+}
+
+/* ---- FLOATING RUNE PARTICLES ---- */
+.rune-particle {
+  position: fixed;
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatRune var(--dur, 20s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+  color: var(--rune-color, rgba(184,41,255,0.15));
+  font-family: var(--font-code);
+}
+
+@keyframes floatRune {
+  0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  5%   { opacity: 0.15; }
+  95%  { opacity: 0.15; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* ---- NEON TEXT ---- */
+.neon-purple {
+  color: var(--shadow-purple);
+  text-shadow: 0 0 10px var(--shadow-purple), 0 0 30px rgba(184,41,255,0.4);
+}
+
+.neon-teal {
+  color: var(--motus-teal);
+  text-shadow: 0 0 10px var(--motus-teal), 0 0 30px rgba(0,255,204,0.4);
+}
+
+.neon-gold {
+  color: var(--lux-gold);
+  text-shadow: 0 0 10px var(--lux-gold), 0 0 30px rgba(255,215,0,0.4);
+}
+
+/* ---- GRADIENT TEXT ---- */
+.gradient-text-magic {
+  background: linear-gradient(135deg, var(--lux-gold), var(--shadow-purple), var(--motus-teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 5s ease infinite;
+}
+
+.gradient-text-lux {
+  background: linear-gradient(135deg, var(--lux-gold), var(--lux-amber), #ffe066);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-shadow {
+  background: linear-gradient(135deg, var(--shadow-purple), #e040fb, #7b1fa2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-motus {
+  background: linear-gradient(135deg, var(--motus-teal), #00bfa5, #69ffea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---- SPELL CARD GLOW BY SCHOOL ---- */
+.spell-lux:hover {
+  border-color: rgba(255,215,0,0.3) !important;
+  box-shadow: 0 8px 40px rgba(255,215,0,0.1) !important;
+}
+
+.spell-shadow:hover {
+  border-color: rgba(184,41,255,0.3) !important;
+  box-shadow: 0 8px 40px rgba(184,41,255,0.1) !important;
+}
+
+.spell-motus:hover {
+  border-color: rgba(0,255,204,0.3) !important;
+  box-shadow: 0 8px 40px rgba(0,255,204,0.1) !important;
+}
+
+.spell-wicked:hover {
+  border-color: rgba(255,68,68,0.3) !important;
+  box-shadow: 0 8px 40px rgba(255,68,68,0.1) !important;
+}
+
+.spell-claw:hover {
+  border-color: rgba(255,140,0,0.3) !important;
+  box-shadow: 0 8px 40px rgba(255,140,0,0.1) !important;
+}
+
+/* ---- SCROLL REVEAL ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ---- CONFETTI ---- */
+.confetti-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 2px;
+  animation: confettiFall var(--dur, 3s) ease-in forwards;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(var(--rot, 720deg)); opacity: 0; }
+}
+
+/* ---- SHIMMER EFFECT ---- */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+  animation: shimmerMove 3s ease infinite;
+}
+
+@keyframes shimmerMove {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ---- LOADING PULSE ---- */
+.pulse-ring {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--shadow-purple);
+  border-radius: 50%;
+  animation: pulseRing 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2);   opacity: 0; }
+}
+
+/* ---- TITLE CYCLING ---- */
+/* Handled by JS, no CSS needed */
+
+/* ---- BOTTOM GRIMOIRE REVEAL ---- */
+.grimoire-bottom-secret {
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--shadow-purple);
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 2s ease;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 20px rgba(184,41,255,0.4);
+}
+
+.grimoire-bottom-secret.revealed { opacity: 1; }
+
+/* ---- PARTICLE CANVAS ---- */
+#particle-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- HEX GRID BACKGROUND ---- */
+.hex-bg {
+  background-image: 
+    repeating-linear-gradient(
+      60deg,
+      rgba(184,41,255,0.02) 0px,
+      rgba(184,41,255,0.02) 1px,
+      transparent 1px,
+      transparent 30px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      rgba(0,255,204,0.02) 0px,
+      rgba(0,255,204,0.02) 1px,
+      transparent 1px,
+      transparent 30px
+    );
+}

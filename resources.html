@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Resources — Claris Magic</title>
+  <meta name="description" content="The best free cybersecurity learning resources: training platforms, CTF challenges, tools, knowledge bases, podcasts. No paywalls.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="page-content">
+
+  <section style="text-align:center; padding:3rem 1.5rem 2rem; max-width:700px; margin:0 auto;">
+    <div class="hero-eyebrow" style="color:var(--motus-teal);">The Practitioner's Library</div>
+    <h1 class="gradient-text-motus">Free Resources</h1>
+    <p style="color:var(--text-secondary); font-style:italic; margin-top:1rem;">The Grimoire teaches the language. These resources teach the craft. Every single one is free. No paywalls. No gatekeeping. The knowledge belongs to anyone willing to learn.</p>
+  </section>
+
+  <div class="container" id="resources-container">
+    <!-- Rendered by JS -->
+    <div style="text-align:center; padding:3rem; color:var(--text-muted);">Loading resources...</div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/spells-data.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/easter-eggs.js"></script>
+<script>
+(function() {
+  const CATEGORIES = [
+    { key: 'training', label: '🎮 Training Platforms', desc: 'Hands-on, interactive learning environments', id: 'training' },
+    { key: 'certprep', label: '📜 Certification Prep', desc: 'Prepare for industry certifications, free', id: 'certprep' },
+    { key: 'ctf', label: '🏴 CTF & Practice Labs', desc: 'Vulnerable systems to legally hack and learn from', id: 'ctf' },
+    { key: 'knowledge', label: '📖 Knowledge Bases', desc: 'Reference docs, news, research, and journalism', id: 'knowledge' },
+    { key: 'tools', label: '🛠️ Open Source Tools', desc: 'Production-grade security tools, all free', id: 'tools' },
+    { key: 'media', label: '🎧 Podcasts & YouTube', desc: 'Audio and video learning from practitioners', id: 'media' },
+  ];
+
+  function renderResource(r) {
+    const freeBadge = r.free === true
+      ? '<span class="resource-free-badge">FREE</span>'
+      : r.free === 'partial'
+        ? '<span class="resource-free-badge" style="background:rgba(255,215,0,0.1);color:var(--lux-gold);border-color:rgba(255,215,0,0.2);">FREE TIER</span>'
+        : '';
+
+    const linkHtml = r.url
+      ? `<a href="${r.url}" class="resource-link" target="_blank" rel="noopener">↗ ${r.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a>`
+      : '';
+
+    return `
+    <div class="resource-card">
+      <div class="resource-card-header">
+        <div class="resource-name">${r.name}</div>
+        ${freeBadge}
+      </div>
+      <p class="resource-desc">${r.desc}</p>
+      ${linkHtml}
+    </div>
+    `;
+  }
+
+  function renderResources() {
+    const container = document.getElementById('resources-container');
+    if (!container || !window.RESOURCES) return;
+
+    let html = '';
+
+    CATEGORIES.forEach(cat => {
+      const items = window.RESOURCES[cat.key] || [];
+      if (!items.length) return;
+
+      html += `
+      <section class="resource-category-section reveal" id="${cat.id}">
+        <h2 class="resource-category-title">
+          ${cat.label}
+          <span style="font-size:0.85rem; color:var(--text-muted); font-weight:400; font-family:var(--font-code);">${cat.desc}</span>
+        </h2>
+        <div class="resources-grid">
+          ${items.map(renderResource).join('')}
+        </div>
+      </section>
+      `;
+    });
+
+    html += `
+    <div class="grimoire-quote reveal" style="margin:3rem 0;">
+      The best cybersecurity practitioners were not born knowing these tools. They sat with them for hours. They broke things. They fixed them. They broke them again. The resources above are not shortcuts — they are the long road, which is the only road.
+      <cite>— Grimoire of the Guardian Archmage, Vol. II</cite>
+    </div>
+    <div style="text-align:center; padding:2rem 0 3rem;" class="reveal">
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Know a free resource that should be here?</p>
+      <a href="submit.html" class="btn btn-secondary">Submit to the Grimoire →</a>
+    </div>
+    `;
+
+    container.innerHTML = html;
+
+    // Re-init scroll reveal for injected content
+    setTimeout(() => {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+        });
+      }, { threshold: 0.05 });
+      reveals.forEach(el => observer.observe(el));
+    }, 50);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderResources);
+  } else {
+    renderResources();
+  }
+})();
+</script>
+</body>
+</html>

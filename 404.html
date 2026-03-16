@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Claris Magic</title>
+  <meta name="description" content="The page you seek has not been written. Perhaps you are meant to write it.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    .not-found-container {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .not-found-inner {
+      max-width: 600px;
+    }
+    .not-found-glyph {
+      font-size: 6rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: floatGlyph 3s ease-in-out infinite;
+    }
+    @keyframes floatGlyph {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .not-found-code {
+      font-family: var(--font-code);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .not-found-title {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+      color: var(--shadow-purple);
+    }
+    .not-found-quote {
+      font-style: italic;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .not-found-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .rune-divider {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      letter-spacing: 0.5em;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="page-content">
+  <div class="not-found-container">
+    <div class="not-found-inner">
+      <span class="not-found-glyph">🔮</span>
+      <div class="not-found-code">ERROR 404 · PAGE UNWRITTEN</div>
+      <h1 class="not-found-title">The Page You Seek Has Not Been Written</h1>
+      <div class="rune-divider">ᚠ ᚢ ᚦ ᚨ ᚱ</div>
+      <p class="not-found-quote">
+        Perhaps you arrived too early. Or perhaps<br>
+        <strong style="color:var(--lux-gold);">you are meant to write it.</strong>
+      </p>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:2rem;">
+        Every spell in the Grimoire was once a blank page.<br>
+        Every guardian was once a seeker who couldn't find the answer.
+      </p>
+      <div class="not-found-actions">
+        <a href="index.html" class="btn btn-secondary">← Return Home</a>
+        <a href="submit.html" class="btn btn-primary">✍️ Submit a Spell</a>
+        <a href="grimoire.html" class="btn btn-secondary">📖 Browse Grimoire</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/spells-data.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/easter-eggs.js"></script>
+</body>
+</html>

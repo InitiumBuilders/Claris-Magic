@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High-Leverage Tips & Hacks — Claris Magic</title>
+  <meta name="description" content="The highest-leverage cybersecurity tips, mental models, and free power moves. Not theory — real tactics that work.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    /* ---- TIPS PAGE SPECIFIC ---- */
+    .tips-hero-eyebrow {
+      color: #ffaa00;
+    }
+
+    .tips-section {
+      padding: 2rem 0 3rem;
+    }
+
+    .tips-section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .tips-section-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .tips-section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: var(--lux-gold);
+      margin: 0;
+    }
+
+    .tips-section-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0.25rem 0 0;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .tip-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: var(--card-radius);
+      padding: 1.25rem 1.5rem;
+      transition: all var(--transition-med);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tip-card::before {
+      content: '⚡';
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.2rem;
+      opacity: 0.12;
+      transition: opacity var(--transition-med);
+    }
+
+    .tip-card:hover {
+      border-color: rgba(255,170,0,0.4);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(255,170,0,0.08);
+    }
+
+    .tip-card:hover::before {
+      opacity: 0.35;
+    }
+
+    .tip-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--lux-gold);
+      margin-bottom: 0.5rem;
+      padding-right: 2rem;
+    }
+
+    .tip-desc {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .tip-desc a {
+      color: var(--motus-teal);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .tip-desc a:hover {
+      color: var(--lux-gold);
+    }
+
+    /* Impact badge */
+    .tip-impact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-family: var(--font-code);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .tip-impact-critical {
+      background: rgba(255,68,68,0.1);
+      color: #ff6666;
+      border: 1px solid rgba(255,68,68,0.2);
+    }
+
+    .tip-impact-high {
+      background: rgba(255,170,0,0.1);
+      color: var(--lux-amber);
+      border: 1px solid rgba(255,170,0,0.2);
+    }
+
+    .tip-impact-free {
+      background: rgba(0,255,136,0.1);
+      color: #00ff88;
+      border: 1px solid rgba(0,255,136,0.2);
+    }
+
+    /* Mental model card variant */
+    .mental-model-card {
+      border-left: 3px solid var(--shadow-purple);
+    }
+
+    .mental-model-card:hover {
+      border-left-color: var(--motus-teal);
+      border-color: rgba(0,255,204,0.3);
+    }
+
+    .mental-model-card .tip-title {
+      color: var(--shadow-purple);
+    }
+
+    .mental-model-card:hover .tip-title {
+      color: var(--motus-teal);
+    }
+
+    /* Free tool card variant */
+    .free-tool-card {
+      border-left: 3px solid var(--motus-teal);
+    }
+
+    /* Insider knowledge card */
+    .insider-card {
+      border-left: 3px solid var(--ember-red);
+    }
+
+    .insider-card .tip-title {
+      color: var(--ember-red);
+    }
+
+    /* Lightning divider */
+    .lightning-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--lux-amber);
+      font-size: 1.2rem;
+    }
+
+    .lightning-divider::before,
+    .lightning-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,170,0,0.3));
+    }
+
+    .lightning-divider::after {
+      background: linear-gradient(to left, transparent, rgba(255,170,0,0.3));
+    }
+
+    /* The "80/20 highlight" */
+    .highlight-stat {
+      background: rgba(255,170,0,0.06);
+      border: 1px solid rgba(255,170,0,0.15);
+      border-radius: var(--card-radius);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .highlight-stat-num {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      color: var(--lux-gold);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .highlight-stat-text {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .highlight-stat-text strong {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 600px) {
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+      .highlight-stat {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="page-content">
+
+  <!-- Hero -->
+  <section style="text-align:center; padding:3rem 1.5rem 2rem; max-width:700px; margin:0 auto;">
+    <div class="hero-eyebrow tips-hero-eyebrow">⚡ High-Leverage Intelligence</div>
+    <h1 style="background:linear-gradient(135deg,#ffd700,#ffaa00,#ff6600); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Tips & Hacks</h1>
+    <p style="color:var(--text-secondary); font-style:italic; margin-top:1rem;">Not theory. Not certification prep. The highest-leverage things you can do right now — tactics that block 80% of attacks, mental models that change how you think, and free tools the pros actually use.</p>
+  </section>
+
+  <div class="container" style="padding-bottom:5rem;">
+
+    <!-- Highlight stat -->
+    <div class="highlight-stat reveal">
+      <div class="highlight-stat-num">99.9%</div>
+      <div class="highlight-stat-text">
+        <strong>of account compromises are blocked by MFA alone.</strong><br>
+        One action. No cost. The highest return-on-effort security move that exists.
+      </div>
+    </div>
+
+    <!-- Section 1: 80/20 of Cyber Defense -->
+    <section class="tips-section reveal">
+      <div class="tips-section-header">
+        <span class="tips-section-icon">🛡️</span>
+        <div>
+          <h2 class="tips-section-title">The 80/20 of Cyber Defense</h2>
+          <p class="tips-section-desc">Five things that stop the majority of attacks. No exceptions. Do these first.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-critical">⚡ CRITICAL</div>
+          <div class="tip-title">Enable MFA Everywhere</div>
+          <p class="tip-desc">Blocks 99.9% of account compromise attacks. Email, banking, social, cloud — all of it. Use an authenticator app (not SMS). This single action has more security ROI than anything else on this page.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-critical">⚡ CRITICAL</div>
+          <div class="tip-title">Patch Within 48 Hours</div>
+          <p class="tip-desc">Most exploits target known CVEs — vulnerabilities that already have patches. Attackers weaponize new CVEs within 24-48 hours of disclosure. Patch fast. Automate it where you can. The attacker is waiting for you to delay.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-high">⚡ HIGH</div>
+          <div class="tip-title">Principle of Least Privilege</div>
+          <p class="tip-desc">Every user, every service, every process gets exactly the permissions it needs — nothing more. When an attacker compromises an account, they inherit its permissions. Minimize the blast radius before the breach happens.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-high">⚡ HIGH</div>
+          <div class="tip-title">Network Segmentation</div>
+          <p class="tip-desc">Divide your network into zones. If an attacker gets into one zone, they shouldn't be able to reach everything else. Stop lateral movement before it becomes a full breach. Critical for both enterprise and home networks.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-high">⚡ HIGH</div>
+          <div class="tip-title">The 3-2-1 Backup Rule</div>
+          <p class="tip-desc">3 copies of your data. 2 different media types. 1 offsite. This is ransomware's kryptonite. If you have a clean, verified backup from yesterday, ransomware is just an inconvenience — not a catastrophe.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightning-divider">⚡</div>
+
+    <!-- Section 2: Defender's Hacks -->
+    <section class="tips-section reveal">
+      <div class="tips-section-header">
+        <span class="tips-section-icon">🎯</span>
+        <div>
+          <h2 class="tips-section-title">The Defender's Hacks</h2>
+          <p class="tips-section-desc">Techniques the pros use. Cheap to implement. Highly effective. Often overlooked.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">Canary Tokens — Invisible Tripwires</div>
+          <p class="tip-desc">Free at <a href="https://canarytokens.org" target="_blank" rel="noopener">canarytokens.org</a>. Drop fake files, URLs, or credentials in sensitive locations. The moment an attacker opens them, you get an alert. Set it and forget it. The best intrusion detection you've never deployed.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-high">⚡ HIGH</div>
+          <div class="tip-title">DNS Sinkholing</div>
+          <p class="tip-desc">Redirect known malicious domains to localhost (127.0.0.1). At the network level, this kills C2 callbacks, malware downloads, and phishing pages before they load. Use a regularly updated blocklist. Pihole + block lists = instant upgrade.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">Fail2ban + Rate Limiting</div>
+          <p class="tip-desc">Fail2ban watches your logs and bans IPs after repeated failures. SSH brute force, login attempts, web scrapers — all get automatically blocked. Stops 99% of automated attacks at the door. Install it in 5 minutes.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-critical">⚡ CRITICAL</div>
+          <div class="tip-title">SSH Keys Only — No Passwords</div>
+          <p class="tip-desc">Disable SSH password authentication entirely. Key-based auth is cryptographically stronger, immune to password spraying and brute force, and requires no password to forget or reuse. One config line eliminates an entire attack category.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-impact tip-impact-high">⚡ HIGH</div>
+          <div class="tip-title">Immutable Infrastructure</div>
+          <p class="tip-desc">Don't patch compromised servers — rebuild them from a clean image. When something is wrong, nuke it and restore from code. Attackers love persistent access; immutable infra denies it. Infrastructure-as-code + short-lived VMs = this for free.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightning-divider">⚡</div>
+
+    <!-- Section 3: Mental Models -->
+    <section class="tips-section reveal">
+      <div class="tips-section-header">
+        <span class="tips-section-icon">🧠</span>
+        <div>
+          <h2 class="tips-section-title">The Mental Models</h2>
+          <p class="tips-section-desc">How to think about security. These frameworks change your instincts.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card mental-model-card">
+          <div class="tip-title">Assume Breach</div>
+          <p class="tip-desc">Design every system assuming the attacker is already inside. What can they see? What can they move to? What can they exfiltrate? Build layers so that being inside one zone doesn't mean being inside all zones. Paranoia as architecture.</p>
+        </div>
+        <div class="tip-card mental-model-card">
+          <div class="tip-title">Defense in Depth</div>
+          <p class="tip-desc">No single security control is perfect. Layer them. If the firewall fails, the EDR catches it. If the EDR fails, the backup saves you. If the backup fails, the insurance pays out. No single point of failure. The attacker must win every layer.</p>
+        </div>
+        <div class="tip-card mental-model-card">
+          <div class="tip-title">Zero Trust</div>
+          <p class="tip-desc">Never trust, always verify. Don't trust anything by default — not the device, not the network, not the user. Verify every access request every time. "Inside the perimeter" is not a meaningful concept anymore. Act accordingly.</p>
+        </div>
+        <div class="tip-card mental-model-card">
+          <div class="tip-title">Shift Left</div>
+          <p class="tip-desc">Security bugs found in design cost 1x. Found in development: 10x. Found in production: 100x. Shift security left into the design phase, the sprint planning, the code review. The earlier you catch it, the cheaper it is to fix.</p>
+        </div>
+        <div class="tip-card mental-model-card">
+          <div class="tip-title">Blast Radius Thinking</div>
+          <p class="tip-desc">For every system you build, ask: if this is compromised, how far can the blast reach? What data is exposed? What other systems are reachable? Minimizing blast radius is the meta-skill behind least privilege, segmentation, and isolation.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightning-divider">⚡</div>
+
+    <!-- Section 4: Free Power Moves -->
+    <section class="tips-section reveal">
+      <div class="tips-section-header">
+        <span class="tips-section-icon">🔧</span>
+        <div>
+          <h2 class="tips-section-title">Free Power Moves</h2>
+          <p class="tips-section-desc">Professional-grade tools. All free. Use them now.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card free-tool-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">Have I Been Pwned</div>
+          <p class="tip-desc">Check if your email and passwords have been leaked in data breaches. <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">haveibeenpwned.com</a> — run by Troy Hunt, trusted by millions. Set up email alerts for new breaches. Do this today.</p>
+        </div>
+        <div class="tip-card free-tool-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">VirusTotal</div>
+          <p class="tip-desc">Scan any file or URL against 70+ antivirus engines instantly. <a href="https://virustotal.com" target="_blank" rel="noopener">virustotal.com</a> — before you open that attachment, before you visit that link. 5-second habit that catches real threats.</p>
+        </div>
+        <div class="tip-card free-tool-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">Shodan — See What's Exposed</div>
+          <p class="tip-desc"><a href="https://shodan.io" target="_blank" rel="noopener">shodan.io</a> — search engine for internet-connected devices. Type your IP or domain and see what the world can see. Cameras, routers, databases, APIs — all indexed. If an attacker can find it, so can you.</p>
+        </div>
+        <div class="tip-card free-tool-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">SecurityHeaders.com</div>
+          <p class="tip-desc">Test your website's HTTP security headers instantly. <a href="https://securityheaders.com" target="_blank" rel="noopener">securityheaders.com</a> — grades you A through F, tells you exactly what's missing. CSP, HSTS, X-Frame-Options — add these and stop an entire class of web attacks.</p>
+        </div>
+        <div class="tip-card free-tool-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">SSL Labs TLS Test</div>
+          <p class="tip-desc">Deep analysis of your TLS configuration. <a href="https://ssllabs.com/ssltest" target="_blank" rel="noopener">ssllabs.com/ssltest</a> — checks your certificate chain, cipher suites, protocol versions, and known vulnerabilities. Get an A+. It's free and takes 30 seconds.</p>
+        </div>
+        <div class="tip-card free-tool-card">
+          <div class="tip-impact tip-impact-free">✅ FREE</div>
+          <div class="tip-title">Mozilla Observatory</div>
+          <p class="tip-desc">Comprehensive web security scan. <a href="https://observatory.mozilla.org" target="_blank" rel="noopener">observatory.mozilla.org</a> — tests headers, TLS, cookies, redirects, and more in one shot. Mozilla-maintained, trusted, free. Run it on any site you own.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightning-divider">⚡</div>
+
+    <!-- Section 5: Insider Knowledge -->
+    <section class="tips-section reveal">
+      <div class="tips-section-header">
+        <span class="tips-section-icon">🕵️</span>
+        <div>
+          <h2 class="tips-section-title">The Insider Knowledge</h2>
+          <p class="tips-section-desc">What practitioners know that most people don't. The uncomfortable truths.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card insider-card">
+          <div class="tip-title">Phishing Starts 80%+ of Breaches</div>
+          <p class="tip-desc">Most security budgets go to firewalls and EDR. Most breaches start with a phishing email. Security awareness training — real, ongoing, phishing-simulation training — has more ROI than almost any technical control. Train the humans.</p>
+        </div>
+        <div class="tip-card insider-card">
+          <div class="tip-title">Cloud Misconfig = #1 Cloud Attack Vector</div>
+          <p class="tip-desc">Public S3 buckets. Open database ports. Overpermissioned IAM roles. Not clever exploits — configuration errors made under pressure. Audit your cloud permissions regularly. Use CSPM tools. Assume your team made mistakes because teams always do.</p>
+        </div>
+        <div class="tip-card insider-card">
+          <div class="tip-title">Supply Chain Attacks Are Growing Fast</div>
+          <p class="tip-desc">SolarWinds. Log4j. XZ Utils. Attackers compromise one trusted library and reach millions of systems. Verify your dependencies. Use SBOM. Pin versions. Review what you're importing. The thing you didn't write is often the thing that gets you.</p>
+        </div>
+        <div class="tip-card insider-card">
+          <div class="tip-title">Ransomware Groups Operate Like Startups</div>
+          <p class="tip-desc">Ransomware-as-a-Service (RaaS). Bug bounties for vulnerabilities. Customer service portals. Negotiation teams. This is a mature industry with professional operations. Your adversary is organized, funded, and motivated. Plan accordingly.</p>
+        </div>
+        <div class="tip-card insider-card">
+          <div class="tip-title">AI Phishing Is Indistinguishable From Human</div>
+          <p class="tip-desc">AI-generated spear-phishing emails now perfectly mimic writing style, use personal context from LinkedIn, and craft contextually accurate lures. You cannot trust the quality of writing as a signal. Verify high-stakes requests via a separate channel. Always.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightning-divider">⚡</div>
+
+    <!-- CTA -->
+    <div class="grimoire-quote reveal" style="margin:2rem 0;">
+      Security is not a product you buy. It is a practice you build. These tips are not a checklist to check once — they are habits to develop, revisit, and deepen. The mage who casts these spells daily is the mage who does not lose.
+      <cite>— Grimoire of the Guardian Archmage, Appendix on Practice</cite>
+    </div>
+
+    <div style="text-align:center; padding:2rem 0 1rem;" class="reveal">
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Ready to learn the craft more deeply?</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="resources.html" class="btn btn-secondary">📚 Free Resources →</a>
+        <a href="grimoire.html" class="btn btn-primary">📖 Explore the Grimoire →</a>
+        <a href="submit.html" class="btn btn-secondary">✍️ Submit a Spell →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/spells-data.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/easter-eggs.js"></script>
+<script>
+// Scroll reveal for tips page
+(function() {
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.05 });
+    reveals.forEach(el => observer.observe(el));
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReveal);
+  } else {
+    initReveal();
+  }
+})();
+</script>
+</body>
+</html>

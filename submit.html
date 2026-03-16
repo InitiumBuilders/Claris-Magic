@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit a Spell — Claris Magic</title>
+  <meta name="description" content="Submit a new spell to the Community Grimoire. Anonymous. No account needed. The Grimoire grows through community knowledge.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="page-content">
+
+  <section style="text-align:center; padding:3rem 1.5rem 2rem; max-width:700px; margin:0 auto;">
+    <div class="hero-eyebrow" style="color:var(--shadow-purple);">The Grimoire Grows</div>
+    <h1 class="gradient-text-shadow">Submit a Spell</h1>
+    <p style="color:var(--text-secondary); font-style:italic; margin-top:1rem;">Every practitioner has encountered magic that isn't named yet. Submit yours. Anonymous. No account. No gatekeeping.</p>
+    <div style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted); font-family:var(--font-code);">Spells are stored locally in your browser · To submit to the main Grimoire, <a href="https://github.com/initium-builders/claris-magic" target="_blank" rel="noopener">open a PR on GitHub</a></div>
+  </section>
+
+  <div class="container" style="max-width:800px; padding-bottom:4rem;">
+
+    <div class="submit-form-container">
+
+      <!-- Form -->
+      <div class="card" style="margin-bottom:2rem;">
+        <form id="spell-submit-form">
+          <div class="form-group">
+            <label class="form-label" for="spell-name">Spell Name *</label>
+            <input type="text" id="spell-name" class="form-input" placeholder="e.g. Veil of Lateral Movement" required maxlength="80">
+            <div class="form-hint">Give it a name that evokes the feeling of the capability, not the technical description.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="spell-school">School of Magic *</label>
+            <select id="spell-school" class="form-select" required>
+              <option value="">Choose a school...</option>
+              <option value="lux">✨ Lux Lore — Protective, defensive, preservative</option>
+              <option value="shadow">🌑 Dark Arts — Hunting, detecting, testing</option>
+              <option value="motus">🌀 Motus Magic — Adaptive, learning, evolving</option>
+              <option value="wicked">🔴 Wicked Problem — An unsolved challenge</option>
+              <option value="claw">🦅 Claw Magic — AI agent / OpenClaw specific</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="spell-rating">Buildability *</label>
+            <select id="spell-rating" class="form-select" required>
+              <option value="">Choose buildability...</option>
+              <option value="built">🟢 BUILT — Already exists and is deployed</option>
+              <option value="buildable">🔵 BUILDABLE — Could build with current tech in 6-12 months</option>
+              <option value="emerging">🟡 EMERGING — Technology developing, 1-3 years out</option>
+              <option value="arcane">🔴 ARCANE — True magic. Not yet possible.</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="spell-mapping">Real-World Mapping</label>
+            <input type="text" id="spell-mapping" class="form-input" placeholder="e.g. Network segmentation, east-west traffic control" maxlength="200">
+            <div class="form-hint">What technology, technique, or practice does this spell represent?</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="spell-desc">Spell Description *</label>
+            <textarea id="spell-desc" class="form-textarea" placeholder="Describe the spell in magical terms. Make it poetic. Make it true. What does this magic do, and why does it matter?" required maxlength="500"></textarea>
+            <div class="form-hint">Aim for 2-4 sentences. Evocative, not dry. ✨</div>
+          </div>
+
+          <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+            <button type="submit" class="btn btn-primary">⚡ Cast This Spell Into the Grimoire</button>
+            <span style="font-size:0.8rem; color:var(--text-muted); font-style:italic;">Stored locally in your browser</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success message -->
+      <div class="submit-success" id="submit-success" style="display:none;">
+        <div style="font-size:3rem; margin-bottom:1rem;">🔮</div>
+        <h3 class="gradient-text-magic" style="margin-bottom:0.5rem;">Spell Added to Your Grimoire</h3>
+        <p style="color:var(--text-secondary); margin-bottom:1.5rem;">Your spell has been added to the Community Grimoire below. To share it with the world, open a pull request on GitHub.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <button id="submit-another" class="btn btn-secondary">Add Another Spell</button>
+          <a href="https://github.com/initium-builders/claris-magic" target="_blank" rel="noopener" class="btn btn-primary">Open PR on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- The Rite -->
+      <div class="grimoire-quote" style="margin:2rem 0;">
+        Every spell began as an observation. Someone noticed a pattern, named it, and shared the name. The sharing made it teachable. The teaching made it powerful. Submit yours.
+        <cite>— How to Add a New Spell, Grimoire Appendix</cite>
+      </div>
+    </div>
+
+    <!-- Community Grimoire -->
+    <section style="margin-top:3rem;">
+      <h2 style="font-family:var(--font-heading); margin-bottom:0.5rem;">🌐 Community Grimoire</h2>
+      <p style="color:var(--text-muted); font-size:0.875rem; margin-bottom:1.5rem; font-family:var(--font-code);">Spells submitted in this browser session and previous sessions on this device.</p>
+      <div class="community-grid" id="community-spells">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/spells-data.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/submit.js"></script>
+<script src="js/easter-eggs.js"></script>
+</body>
+</html>

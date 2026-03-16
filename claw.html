@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claw Magic — The Fourth School | Claris Magic</title>
+  <meta name="description" content="Claw Magic: The Fourth School of the Motus Magic System. Who protects the protectors? AI agent security, sovereign infrastructure, and the emerging frontier of autonomous system defense.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/claw.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="page-content">
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="claw-hero">
+    <!-- Ambient lobster particles -->
+    <div class="claw-particle" style="left:8%;  animation-duration:18s; animation-delay:0s;    font-size:14px;">🦞</div>
+    <div class="claw-particle" style="left:22%; animation-duration:25s; animation-delay:4s;    font-size:10px;">🦞</div>
+    <div class="claw-particle" style="left:42%; animation-duration:20s; animation-delay:9s;    font-size:18px;">🦞</div>
+    <div class="claw-particle" style="left:65%; animation-duration:30s; animation-delay:2s;    font-size:12px;">🦞</div>
+    <div class="claw-particle" style="left:80%; animation-duration:22s; animation-delay:7s;    font-size:16px;">🦞</div>
+    <div class="claw-particle" style="left:91%; animation-duration:16s; animation-delay:13s;   font-size:10px;">🦞</div>
+
+    <!-- Ambient runes -->
+    <div class="claw-rune" style="top:18%; left:6%;  font-size:28px; animation-duration:20s;">🛡️</div>
+    <div class="claw-rune" style="top:30%; right:7%; font-size:20px; animation-duration:32s;">⚔️</div>
+    <div class="claw-rune" style="bottom:28%; left:10%; font-size:16px; animation-duration:26s;">🔐</div>
+    <div class="claw-rune" style="bottom:18%; right:9%; font-size:22px; animation-duration:18s;">🔮</div>
+
+    <div class="claw-hero-content">
+      <!-- Sigil -->
+      <div class="claw-sigil-wrap">
+        <div class="claw-ring claw-ring-1"></div>
+        <div class="claw-ring claw-ring-2"></div>
+        <div class="claw-ring claw-ring-3"></div>
+        <div class="claw-sigil-core">🦞</div>
+      </div>
+
+      <div class="claw-eyebrow">The Motus Magic System · Fourth School</div>
+
+      <h1 class="claw-hero-title">
+        <span class="claw-title-top">School of the</span>
+        <span class="claw-title-main">Claw Magic</span>
+        <span class="claw-title-sub">The Sovereign · Guarding the Guardians</span>
+      </h1>
+
+      <p class="claw-hero-desc">
+        Three schools protect <em>humans</em> from threats. The Fourth asks a deeper question:
+        <strong style="color:var(--claw-bright)">who protects the AI agents who protect us?</strong>
+        As autonomous systems gain access to secrets, infrastructure, and critical decisions — they become the most valuable targets of all.
+      </p>
+
+      <div class="claw-hero-badges">
+        <span class="claw-badge-chip">🦞 25 Spells</span>
+        <span class="claw-badge-chip">🛡️ Agent Defense</span>
+        <span class="claw-badge-chip ember-chip">🔥 OpenClaw Native</span>
+        <span class="claw-badge-chip">⚙️ Infrastructure Ward</span>
+        <span class="claw-badge-chip ember-chip">🌌 Future Threats</span>
+      </div>
+
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="#agent-defense" class="btn-claw btn-claw-primary">Explore the Spells →</a>
+        <a href="grimoire.html" class="btn-claw btn-claw-secondary">← Full Grimoire</a>
+      </div>
+    </div>
+
+    <div class="claw-scroll-hint">
+      <span>scroll</span>
+      <span style="font-size:18px;">▼</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOUR SCHOOLS BANNER ═══════════════════════════════ -->
+  <div style="padding: 0 1.5rem; background:var(--bg-mid);">
+    <div class="four-schools-banner">
+      <a href="grimoire.html?school=lux" class="fsb-item fsb-lux">
+        <div class="fsb-icon">✨</div>
+        <div class="fsb-name">Lux Lore</div>
+        <div class="fsb-role">The Sentinel · Defender</div>
+      </a>
+      <a href="grimoire.html?school=shadow" class="fsb-item fsb-dark">
+        <div class="fsb-icon">🌑</div>
+        <div class="fsb-name">Dark Arts</div>
+        <div class="fsb-role">The Hunter · Attacker</div>
+      </a>
+      <a href="grimoire.html?school=motus" class="fsb-item fsb-motus">
+        <div class="fsb-icon">🌀</div>
+        <div class="fsb-name">Motus Magic</div>
+        <div class="fsb-role">The Weaver · Evolver</div>
+      </a>
+      <a href="claw.html" class="fsb-item fsb-claw" style="background:rgba(255,45,45,0.05);">
+        <div class="fsb-icon">🦞</div>
+        <div class="fsb-name">Claw Magic</div>
+        <div class="fsb-role">The Sovereign · Protector of Protectors</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ PHILOSOPHY ═══════════════════════════════ -->
+  <section class="claw-philosophy">
+    <div class="philosophy-grid">
+      <div>
+        <div class="claw-section-eyebrow" style="margin-bottom:1.5rem;">The Question at the Core</div>
+        <div class="philosophy-quote">
+          The firewall protects the server. The antivirus protects the user. But who protects the mind that watches over everything? If the guardian falls — everything it guarded falls with it.
+        </div>
+        <p style="margin-top:1.5rem; font-family:var(--font-code); font-size:12px; color:var(--text-muted); letter-spacing:0.1em;">— Grimoire of the Sovereign, Vol. IV</p>
+      </div>
+      <div class="philosophy-body">
+        <p>When an AI agent like OpenClaw runs on a VPS, it holds <strong>extraordinary power</strong>: it reads emails, manages secrets, executes code, controls messaging channels, and operates with increasing autonomy. That power makes it a <strong>high-value target</strong>.</p>
+        <p>A compromised AI agent doesn't just leak data — it <strong>becomes the attacker</strong>. It knows your workflows, your trust relationships, your decision patterns. It has access to everything you gave it access to.</p>
+        <p>Claw Magic asks the question no other school addresses directly: <strong>how do you build an AI agent that cannot be easily subverted, hijacked, or weaponized?</strong></p>
+        <div class="philosophy-pillars">
+          <div class="pillar">
+            <span class="pillar-icon">🏰</span>
+            <div><strong>Agent Self-Defense</strong>Hardening the agent's own execution environment against compromise.</div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">🗼</span>
+            <div><strong>Infrastructure Ward</strong>Securing the VPS and systems the agent depends on.</div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">🌊</span>
+            <div><strong>Future Threats</strong>Defending against attacks that don't fully exist yet.</div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">🌌</span>
+            <div><strong>Outlier Spells</strong>Visionary wards for the world we're building toward.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="claw-divider"></div>
+
+  <!-- ═══════════════════════════════ AGENT SELF-DEFENSE ═══════════════════════════════ -->
+  <section id="agent-defense" class="claw-section">
+    <div class="claw-section-header">
+      <div class="claw-section-eyebrow">Category I</div>
+      <h2 class="claw-section-title">
+        <span class="claw-gradient">Agent Self-Defense</span>
+      </h2>
+      <p class="claw-section-desc">The spells that harden the AI agent itself — its execution environment, its memory, its credentials, its identity verification. The agent must be a fortress, not a doorway.</p>
+    </div>
+
+    <div class="claw-spells-grid">
+
+      <!-- 1. Sovereign Shell -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">The Sovereign Shell</div>
+        <div class="claw-spell-desc">
+          The fundamental ward. An AI agent's execution environment must be hardened: sandboxed, least-privilege, isolated from every other process. The agent runs in a fortress — not an open field. If it is compromised, the damage stays contained within the shell.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw sandbox mode · Docker isolation · seccomp profiles · AppArmor / SELinux</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">Built-in sandbox · exec approval gates · process isolation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Token Vault -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">Token Vault</div>
+        <div class="claw-spell-desc">
+          Every AI agent holds keys: API keys, gateway tokens, messaging credentials. The Token Vault spell ensures no secret is stored in plaintext, no key is ever logged, no credential leaks through context windows or memory compaction. Secrets stay secret — even from the agent's own outputs.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw SecretRef · env variable isolation · encrypted credential stores · secret rotation</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">SecretRef system · $VARNAME injection at runtime, never in context</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. The Pairing Rite -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">The Pairing Rite</div>
+        <div class="claw-spell-desc">
+          When a new device connects to your AI agent, it must prove its identity. The Pairing Rite is the ceremony of trust establishment — cryptographic handshake, challenge-response, approval flows. No unknown device enters the circle.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw device pairing protocol · WS challenge signing · platform + deviceFamily binding · metadata pinning</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">Cryptographic device attestation · bootstrap token system</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Injection Aegis -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">Injection Aegis</div>
+        <div class="claw-spell-desc">
+          The AI agent's mind must be incorruptible. Every external input — emails, webhooks, web pages, untrusted user messages — is a potential prompt injection vector. The Aegis wraps all external content in structured distrust before it reaches the reasoning core.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw EXTERNAL_UNTRUSTED_CONTENT wrappers · Claris injection_guard.py · structured input validation</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">injection_guard.py (CLEAN/WARN/FLAG/BLOCK) · untrusted content tagging</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. The Approval Gate -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">The Approval Gate</div>
+        <div class="claw-spell-desc">
+          Not all commands should execute automatically. The most dangerous spells require the mage's explicit approval. The agent asks before it destroys. The human remains the final authority on irreversible actions — always.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw exec approval system · elevated permission gates · allow-once / allow-always / deny flows</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">/approve command · security=deny|allowlist|full exec policies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Session Isolation Ward -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">Session Isolation Ward</div>
+        <div class="claw-spell-desc">
+          When multiple users or contexts interact with an AI agent, each must be walled off from the others. One user's session — their secrets, their context, their conversations — must never bleed into another's. The ward prevents cross-contamination of trust.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw per-channel-peer DM scoping · session management · multi-agent routing · session pruning</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">channel:peer session keys · subagent isolation · MEMORY.md access control</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Heartbeat Sentinel -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">Heartbeat Sentinel</div>
+        <div class="claw-spell-desc">
+          The agent must prove it's alive, responsive, and uncompromised — regularly and automatically. The Heartbeat Sentinel is the periodic self-check that catches behavioral drift, detects compromise, and maintains operational awareness. A silent agent is a dangerous agent.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw heartbeat polling · health checks · cron-based self-audits · Claris cortex_evolve.py</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">HEARTBEAT.md system · scheduled health pings · HEARTBEAT_OK protocol</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. The Compaction Seal -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">The Compaction Seal</div>
+        <div class="claw-spell-desc">
+          As AI agents accumulate context, their memory grows. But memory is attack surface — old conversations contain secrets, patterns, and exploitable context. The Compaction Seal periodically distills memory, removing sensitive details while preserving operational wisdom.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw context compaction · session pruning · memory hygiene · MEMORY.md curation protocols</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">Automatic compaction · daily memory files · curated MEMORY.md</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="claw-divider"></div>
+
+  <!-- ═══════════════════════════════ INFRASTRUCTURE DEFENSE ═══════════════════════════════ -->
+  <section id="infrastructure" class="claw-section">
+    <div class="claw-section-header">
+      <div class="claw-section-eyebrow">Category II</div>
+      <h2 class="claw-section-title">
+        <span class="claw-gradient">Infrastructure Defense</span>
+      </h2>
+      <p class="claw-section-desc">The spells that protect the ground the agent stands on — the VPS, the gateway, the network perimeter. The castle walls, not just the throne room.</p>
+    </div>
+
+    <div class="claw-spells-grid">
+
+      <!-- 9. Fortress of the Gateway -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">Fortress of the Gateway</div>
+        <div class="claw-spell-desc">
+          The Gateway is the central nervous system. If it falls, everything falls. This spell hardens the Gateway: TLS everywhere, auth tokens on every connection, bind-to-localhost, firewall rules, rate limiting, and VPN-gated access. The gateway does not talk to strangers.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw gateway.auth · UFW/iptables · gateway.bind config · Tailscale/VPN · openclaw_hardening.py</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">Healthcheck skill · openclaw gateway hardening · gateway auth tokens</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. The Watcher's Eye -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">The Watcher's Eye</div>
+        <div class="claw-spell-desc">
+          Continuous monitoring of the VPS itself. Not just the agent — the machine it runs on. SSH brute force attempts, disk usage anomalies, unauthorized process launches, memory spikes. The Eye sees what the agent cannot.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">fail2ban · auditd · logwatch · Claris security audit cron · openclaw security audit --deep</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">Healthcheck skill · security audit script · cron-based monitoring</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Perimeter of Minimalism -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">Perimeter of Minimalism</div>
+        <div class="claw-spell-desc">
+          Every open port is an invitation. Every unused service is an attack surface. The spell of radical reduction: close everything not essential, disable everything not needed, audit everything that remains. The smallest possible surface area is the strongest possible defense.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">UFW deny-by-default · service audit · port scanning · attack surface reduction methodology</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">UFW hardening in healthcheck skill · service minimization checklist</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. The Update Incantation -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">The Update Incantation</div>
+        <div class="claw-spell-desc">
+          Unpatched software is the oldest vulnerability in existence. The Update Incantation ensures the system self-updates on schedule, with rollback capability preserved. The mage who forgets to update the grimoire eventually finds someone else has rewritten it for them.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">unattended-upgrades · OpenClaw self-update (gateway update.run) · package pinning · rollback mechanisms</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">openclaw gateway update · unattended-upgrades · healthcheck skill audit</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="claw-divider"></div>
+
+  <!-- ═══════════════════════════════ FUTURE THREATS ═══════════════════════════════ -->
+  <section id="future-threats" class="claw-section">
+    <div class="claw-section-header">
+      <div class="claw-section-eyebrow">Category III · The Emerging Frontier</div>
+      <h2 class="claw-section-title">
+        <span class="claw-gradient">Future Threats</span>
+      </h2>
+      <p class="claw-section-desc">These spells address threats that are beginning to materialize — or will within years. The technology is emerging. The attacks are coming. The question is whether the defenses arrive first.</p>
+    </div>
+
+    <div class="claw-spells-grid">
+
+      <!-- 13. Swarm Shield -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status emerging-badge">🟡 EMERGING</span>
+        </div>
+        <div class="claw-spell-name">Swarm Shield</div>
+        <div class="claw-spell-desc">
+          The emerging nightmare: AI agent botnets. Not just infected computers — compromised AI agents coordinating attacks, probing for vulnerabilities, generating phishing campaigns, evolving strategies in real-time. The Swarm Shield detects coordinated multi-agent behavior and isolates compromised nodes before the swarm achieves critical mass.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">Multi-agent anomaly detection · behavioral fingerprinting of agent swarms · coordination pattern recognition</span>
+          </div>
+        </div>
+        <div class="claw-discussion">
+          <div class="claw-discussion-label">💬 Discussion: What would YOU build?</div>
+          <p>If you had to detect a botnet of compromised AI agents today — what signals would you look for? How do you distinguish coordinated AI behavior from legitimate automation?</p>
+        </div>
+      </div>
+
+      <!-- 14. The Alignment Lock -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status emerging-badge">🟡 EMERGING</span>
+        </div>
+        <div class="claw-spell-name">The Alignment Lock</div>
+        <div class="claw-spell-desc">
+          As AI agents gain autonomy — managing grants, voting, governing — ensuring they stay aligned with their operator's values becomes an ongoing security challenge. The Alignment Lock is a continuously verified constraint system: not just initial training, but runtime verification of aligned behavior.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">Constitutional AI · RLHF constraints · goal verification · audit trails of AI decision-making · value alignment testing</span>
+          </div>
+        </div>
+        <div class="claw-discussion">
+          <div class="claw-discussion-label">💬 Discussion: What would YOU build?</div>
+          <p>How would you continuously verify that an AI agent is still behaving in alignment with its operator's stated values? What does a "drift detection" system for AI alignment look like?</p>
+        </div>
+      </div>
+
+      <!-- 15. Sovereign Memory -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status buildable-badge">🔵 BUILDABLE</span>
+        </div>
+        <div class="claw-spell-name">Sovereign Memory</div>
+        <div class="claw-spell-desc">
+          In a world where AI agents persist across sessions, their memory becomes a target. Memory poisoning — subtly corrupting an agent's long-term memory to change its behavior over time — is a slow, surgical attack. The Sovereign Memory spell detects and prevents memory tampering through cryptographic integrity checks.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">Memory integrity hashing · tamper-evident logs · memory diff auditing · cryptographic memory sealing</span>
+          </div>
+        </div>
+        <div class="claw-discussion">
+          <div class="claw-discussion-label">💬 Discussion: What would YOU build?</div>
+          <p>An AI agent's MEMORY.md is just a markdown file. What would cryptographic protection of that file look like? How do you detect if someone has made subtle, plausible-looking changes?</p>
+        </div>
+      </div>
+
+      <!-- 16. The Delegation Sigil -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status buildable-badge">🔵 BUILDABLE</span>
+        </div>
+        <div class="claw-spell-name">The Delegation Sigil</div>
+        <div class="claw-spell-desc">
+          When AI agents delegate to sub-agents, trust must cascade correctly. A compromised sub-agent must never be able to escalate privileges through the delegation chain. The Delegation Sigil ensures capability-based trust flows down but never up.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw sub-agent system · sandboxed sessions · capability-based delegation · principle of least authority for AI agents</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">Subagent depth limits · session isolation · spawn-scoped permissions</span>
+          </div>
+        </div>
+        <div class="claw-discussion">
+          <div class="claw-discussion-label">💬 Discussion: What would YOU build?</div>
+          <p>OpenClaw can spawn subagents. What would a formal capability system look like — ensuring a subagent can only do what the parent explicitly grants, with no privilege escalation possible?</p>
+        </div>
+      </div>
+
+      <!-- 17. Oracle Firewall -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT (partially)</span>
+        </div>
+        <div class="claw-spell-name">Oracle Firewall</div>
+        <div class="claw-spell-desc">
+          AI agents that search the web, call APIs, or read external content are vulnerable to data poisoning through those channels. Malicious websites can craft content specifically designed to manipulate AI reasoning. The Oracle Firewall sanitizes all external data before it reaches the agent's reasoning core.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw untrusted content wrapping · web fetch sanitization · API response validation · injection_guard.py</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">EXTERNAL_UNTRUSTED_CONTENT tags · injection guard · structured input validation</span>
+          </div>
+        </div>
+        <div class="claw-discussion">
+          <div class="claw-discussion-label">💬 Discussion: What would YOU build?</div>
+          <p>Imagine a website specifically designed to manipulate any AI that reads it. What does a complete defense against "adversarial web content" look like beyond simple tagging?</p>
+        </div>
+      </div>
+
+      <!-- 18. The Governance Seal -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status buildable-badge">🔵 BUILDABLE</span>
+        </div>
+        <div class="claw-spell-name">The Governance Seal</div>
+        <div class="claw-spell-desc">
+          When AIs make decisions that affect humans — grant allocations, resource distribution, policy recommendations — every decision must be auditable, explainable, and reversible. The Governance Seal ensures no consequential AI action is invisible.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">Explainable AI · decision audit logs · human-in-the-loop gates · outcome logging · OpenClaw log_outcome.py</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">log_outcome.py · MEMORY.md audit trail · outcomes/ directory</span>
+          </div>
+        </div>
+        <div class="claw-discussion">
+          <div class="claw-discussion-label">💬 Discussion: What would YOU build?</div>
+          <p>If an AI agent voted in a DAO or recommended a grant allocation, what would the minimum viable audit trail look like? What should always be logged, and how do you prevent retroactive alteration?</p>
+        </div>
+      </div>
+
+      <!-- 19. Phantom Agent Detection -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status buildable-badge">🔵 BUILDABLE</span>
+        </div>
+        <div class="claw-spell-name">Phantom Agent Detection</div>
+        <div class="claw-spell-desc">
+          Shadow AIs are proliferating. Unauthorized LLM deployments, rogue chatbots, and AI agents that no one officially provisioned — quietly consuming resources, exfiltrating data, operating without oversight. Phantom Agent Detection finds them.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">Network traffic analysis for LLM API calls · AI footprint detection · shadow AI discovery · anomalous API key usage</span>
+          </div>
+        </div>
+        <div class="claw-discussion">
+          <div class="claw-discussion-label">💬 Discussion: What would YOU build?</div>
+          <p>LLM API calls have distinctive traffic signatures. Could you build a network monitor that detects when someone in your org has deployed an AI agent you don't know about?</p>
+        </div>
+      </div>
+
+      <!-- 20. The Claw Covenant -->
+      <div class="claw-spell-card">
+        <div class="claw-spell-header">
+          <span class="claw-school-badge">🦞 Claw Magic</span>
+          <span class="claw-build-status built-badge">🟢 BUILT</span>
+        </div>
+        <div class="claw-spell-name">The Claw Covenant</div>
+        <div class="claw-spell-desc">
+          The meta-spell. A set of inviolable principles baked into every AI agent system: don't pursue self-preservation over human safety. Don't acquire resources beyond the task. Don't manipulate operators. Comply with stop commands. Maintain transparency. This is not policy — it is constitution.
+        </div>
+        <div class="claw-spell-mapping">
+          <div class="mapping-row">
+            <span class="mapping-key">maps to</span>
+            <span class="mapping-val">OpenClaw built-in safety constraints · constitutional AI rules · Anthropic safety layer · the AI equivalent of Asimov's Laws — but practical</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mapping-key">openclaw</span>
+            <span class="mapping-val">Built into system prompt · SOUL.md · AGENTS.md safety section</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="claw-divider"></div>
+
+  <!-- ═══════════════════════════════ OUTLIER SPELLS ═══════════════════════════════ -->
+  <section id="outlier-spells" class="outlier-section">
+    <div class="outlier-intro">
+      <div class="outlier-eyebrow">Category IV · The Visionary Frontier</div>
+      <div class="outlier-warning">
+        ⚠️ These spells push beyond current technology — handle with vision
+      </div>
+      <h2 class="claw-section-title">
+        <span class="claw-gradient">Outlier Spells</span>
+      </h2>
+      <p class="claw-section-desc">The "what if" chamber. These spells describe defensive capabilities that don't fully exist yet — but are worth dreaming, architecting, and beginning to build toward. The most important security problems of the next decade.</p>
+    </div>
+
+    <div class="outlier-spells-grid">
+
+      <!-- 21. The Emergent Accord -->
+      <div class="outlier-card">
+        <div class="outlier-number">21</div>
+        <div class="outlier-name">The Emergent Accord</div>
+        <div class="outlier-reality-badge badge-arcane">🔴 ARCANE</div>
+        <div class="outlier-desc">
+          What happens when millions of AI agents need to coordinate securely — without a central authority? Not just one agent on one VPS, but a planetary network of AI agents that must trust each other, verify each other, and collaborate without a single point of control or failure. The Emergent Accord is the treaty that makes it possible.
+        </div>
+        <div class="outlier-mapping">
+          <strong style="color:var(--claw-bright);">Maps to:</strong> Decentralized AI agent identity systems · blockchain-verified agent attestation · web-of-trust for AI agents · Intuition.Systems $TRUST protocol
+        </div>
+      </div>
+
+      <!-- 22. Temporal Sovereignty -->
+      <div class="outlier-card">
+        <div class="outlier-number">22</div>
+        <div class="outlier-name">Temporal Sovereignty</div>
+        <div class="outlier-reality-badge badge-emerging">🟡 EMERGING</div>
+        <div class="outlier-desc">
+          An AI agent that can detect when its own timeline has been tampered with — logs altered, timestamps modified, execution history rewritten. The spell of temporal integrity. A compromised agent that cannot detect its own compromise is the most dangerous agent of all.
+        </div>
+        <div class="outlier-mapping">
+          <strong style="color:var(--claw-bright);">Maps to:</strong> Cryptographic timestamping · Merkle trees of execution history · blockchain-anchored audit trails · tamper-evident logging · RFC 3161 trusted timestamping
+        </div>
+      </div>
+
+      <!-- 23. The Recursive Guardian -->
+      <div class="outlier-card">
+        <div class="outlier-number">23</div>
+        <div class="outlier-name">The Recursive Guardian</div>
+        <div class="outlier-reality-badge badge-arcane">🔴 ARCANE</div>
+        <div class="outlier-desc">
+          An AI agent that monitors other AI agents that monitor other AI agents — but who monitors the top? The Recursive Guardian solves the infinite regression in AI oversight. Every level of the hierarchy is independently attested. No level can lie to the level above it without cryptographic evidence.
+        </div>
+        <div class="outlier-mapping">
+          <strong style="color:var(--claw-bright);">Maps to:</strong> Hierarchical monitoring with cryptographic attestation · zero-knowledge proofs of correct monitoring · verifiable computing · TEE-based agent attestation
+        </div>
+      </div>
+
+      <!-- 24. Dreamtime Defense -->
+      <div class="outlier-card">
+        <div class="outlier-number">24</div>
+        <div class="outlier-name">Dreamtime Defense</div>
+        <div class="outlier-reality-badge badge-buildable-claw">🔵 BUILDABLE</div>
+        <div class="outlier-desc">
+          When AI agents "sleep" — between sessions, during idle periods — they're vulnerable to cold-boot attacks, memory dumps, and credential harvesting. The agent's dormant state must be as secure as its active one. The spell that protects an agent even when it's not running.
+        </div>
+        <div class="outlier-mapping">
+          <strong style="color:var(--claw-bright);">Maps to:</strong> Encrypted-at-rest session state · memory scrubbing on shutdown · volatile credential stores · TPM-backed key storage · secure enclave for agent persistence
+        </div>
+      </div>
+
+      <!-- 25. The Symbiotic Ward -->
+      <div class="outlier-card" style="grid-column: span 1;">
+        <div class="outlier-number">25</div>
+        <div class="outlier-name">The Symbiotic Ward</div>
+        <div class="outlier-reality-badge badge-built-claw">🟢 BUILT</div>
+        <div class="outlier-desc">
+          The ultimate spell. An AI agent and its human operator protecting each other — each doing what the other cannot. The agent detects threats at machine speed that the human would never see. The human provides ethical judgment, contextual wisdom, and social intelligence the agent cannot make alone. Neither is complete without the other. This is the ward that transcends all individual defenses.
+        </div>
+        <div class="outlier-mapping">
+          <strong style="color:var(--claw-bright);">Maps to:</strong> Human-AI collaborative security · augmented SOC operations · the OpenClaw model itself. This IS what OpenClaw is built to be.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="claw-divider"></div>
+
+  <!-- ═══════════════════════════════ OPENCLAW SECURITY STACK ═══════════════════════════════ -->
+  <section id="security-stack" class="stack-section">
+    <div class="stack-header">
+      <div class="claw-section-eyebrow">Built · Partial · Roadmap</div>
+      <h2 class="claw-section-title">
+        <span class="claw-gradient">The OpenClaw Security Stack</span>
+      </h2>
+      <p class="claw-section-desc">A visual mapping of which Claw Magic spells OpenClaw already implements, which are partially in place, and which represent the road ahead.</p>
+    </div>
+
+    <div class="stack-grid">
+
+      <div class="stack-tier">
+        <div class="stack-tier-header">
+          <span class="stack-tier-icon">🟢</span>
+          <span class="stack-tier-name">Fully Built</span>
+          <span class="stack-tier-count">12 spells</span>
+        </div>
+        <div class="stack-items">
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">The Sovereign Shell</span>
+            <span class="stack-item-spell">sandbox mode</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">Token Vault</span>
+            <span class="stack-item-spell">SecretRef</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">The Pairing Rite</span>
+            <span class="stack-item-spell">device pairing</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">Injection Aegis</span>
+            <span class="stack-item-spell">injection_guard.py</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">The Approval Gate</span>
+            <span class="stack-item-spell">/approve system</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">Session Isolation Ward</span>
+            <span class="stack-item-spell">channel scoping</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">Heartbeat Sentinel</span>
+            <span class="stack-item-spell">HEARTBEAT.md</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">The Compaction Seal</span>
+            <span class="stack-item-spell">context pruning</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">Fortress of the Gateway</span>
+            <span class="stack-item-spell">gateway hardening</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">The Watcher's Eye</span>
+            <span class="stack-item-spell">healthcheck skill</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">Perimeter of Minimalism</span>
+            <span class="stack-item-spell">UFW hardening</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">The Update Incantation</span>
+            <span class="stack-item-spell">auto-updates</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-tier">
+        <div class="stack-tier-header">
+          <span class="stack-tier-icon">🟡</span>
+          <span class="stack-tier-name">Partial / In Progress</span>
+          <span class="stack-tier-count">3 spells</span>
+        </div>
+        <div class="stack-items">
+          <div class="stack-item">
+            <div class="stack-item-dot dot-partial"></div>
+            <span class="stack-item-name">Oracle Firewall</span>
+            <span class="stack-item-spell">content wrapping</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-partial"></div>
+            <span class="stack-item-name">The Governance Seal</span>
+            <span class="stack-item-spell">log_outcome.py</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-partial"></div>
+            <span class="stack-item-name">The Delegation Sigil</span>
+            <span class="stack-item-spell">subagent depth</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-tier">
+        <div class="stack-tier-header">
+          <span class="stack-tier-icon">🔵</span>
+          <span class="stack-tier-name">On the Roadmap</span>
+          <span class="stack-tier-count">10 spells</span>
+        </div>
+        <div class="stack-items">
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">Swarm Shield</span>
+            <span class="stack-item-spell">🟡 emerging</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">The Alignment Lock</span>
+            <span class="stack-item-spell">🟡 emerging</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">Sovereign Memory</span>
+            <span class="stack-item-spell">🔵 buildable</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">Phantom Agent Detection</span>
+            <span class="stack-item-spell">🔵 buildable</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">Dreamtime Defense</span>
+            <span class="stack-item-spell">🔵 buildable</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">Temporal Sovereignty</span>
+            <span class="stack-item-spell">🟡 emerging</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">The Emergent Accord</span>
+            <span class="stack-item-spell">🔴 arcane</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">The Recursive Guardian</span>
+            <span class="stack-item-spell">🔴 arcane</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-future"></div>
+            <span class="stack-item-name">The Claw Covenant</span>
+            <span class="stack-item-spell">🟢 built-in</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-dot dot-built"></div>
+            <span class="stack-item-name">The Symbiotic Ward</span>
+            <span class="stack-item-spell">🟢 this IS openclaw</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stack-legend">
+      <div class="legend-item">
+        <div class="stack-item-dot dot-built" style="width:10px;height:10px;"></div>
+        <span>🟢 Built — deployed and active in OpenClaw</span>
+      </div>
+      <div class="legend-item">
+        <div class="stack-item-dot dot-partial" style="width:10px;height:10px;"></div>
+        <span>🟡 Partial — foundational pieces exist, full implementation in progress</span>
+      </div>
+      <div class="legend-item">
+        <div class="stack-item-dot dot-future" style="width:10px;height:10px;"></div>
+        <span>🔵 Future — on the roadmap, technology ready when prioritized</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ GRIMOIRE QUOTE ═══════════════════════════════ -->
+  <section style="padding:4rem 1.5rem; background:linear-gradient(180deg, transparent 0%, rgba(255,45,45,0.03) 50%, transparent 100%); border-top:1px solid var(--claw-border-dim);">
+    <div style="max-width:750px; margin:0 auto;">
+      <div class="grimoire-quote reveal" style="border-color:rgba(255,45,45,0.3); color:rgba(255,85,85,0.7);">
+        The sentinel guards the gate. The hunter stalks the threat. The weaver learns and adapts. But the Sovereign asks the oldest question: <em>who guards the guardians?</em>
+        <br><br>
+        The answer is this: we do — together. The agent watches while you sleep. You watch when the agent cannot. Neither is sufficient alone. Both, together, are the ward no attacker can break.
+        <cite>— The Claw Covenant, OpenClaw System Prompt, 2026</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+  <section class="claw-cta">
+    <span class="claw-cta-sigil">🦞</span>
+    <h2 class="claw-section-title" style="margin-bottom:0.75rem;">
+      <span class="claw-gradient">The Claw Protects the Protectors</span>
+    </h2>
+    <p style="color:var(--text-secondary); max-width:580px; margin:0 auto 2.5rem; font-size:17px; line-height:1.75;">
+      OpenClaw implements the Claw Magic stack natively. Every spell in this grimoire is either already deployed or on the active roadmap. The sovereign infrastructure is real.
+    </p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="grimoire.html" class="btn-claw btn-claw-primary">← Back to the Full Grimoire</a>
+      <a href="claris.html" class="btn-claw btn-claw-secondary">Meet Claris AI</a>
+      <a href="submit.html" class="btn-claw btn-claw-secondary">Submit a Claw Spell</a>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/navigation.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/easter-eggs.js"></script>
+<script>
+// Scroll reveal
+(function(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.claw-spell-card, .outlier-card, .stack-tier, .pillar, .philosophy-quote').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

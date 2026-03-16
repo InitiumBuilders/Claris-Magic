@@ -1,0 +1,10 @@
+{
+  "name": "Quantum Aegis",
+  "school": "wicked",
+  "category": "Cryptographic Frontier",
+  "rating": "emerging",
+  "mapping": "Post-quantum cryptography: CRYSTALS-Kyber, CRYSTALS-Dilithium, SPHINCS+, crypto agility",
+  "desc": "The quantum threat is real and ticking. Every secret encrypted with RSA or ECC today is being harvested — stored by nation-states to be decrypted the day a quantum computer powerful enough arrives. That day may be 5 years away. It may be 15. The Quantum Aegis does not wait to find out. It upgrades your armor now, against weapons that don't exist yet.",
+  "analysis": "NIST finalized post-quantum standards in 2024 (CRYSTALS-Kyber/ML-KEM, CRYSTALS-Dilithium/ML-DSA). Migration is underway. The genuine challenge: 'crypto agility' — building systems that can swap algorithms without redesign. Harvest-now-decrypt-later attacks are happening NOW.",
+  "question": "If quantum computers arrived tomorrow, what encrypted data would be catastrophic to expose?"
+}
