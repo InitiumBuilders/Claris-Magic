@@ -125,10 +125,14 @@
   padding: 1rem;
   transform: translateY(-100%);
   transition: transform var(--transition-med);
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .nav-mobile.open {
   transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .nav-mobile-links {
@@ -281,6 +285,7 @@ body { padding-top: var(--nav-height); }
   mask-composite: exclude;
   opacity: 0;
   transition: opacity var(--transition-med);
+  pointer-events: none;
 }
 
 .card:hover::before { opacity: 1; }

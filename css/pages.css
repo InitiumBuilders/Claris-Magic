@@ -491,10 +491,14 @@
 .submit-form-container {
   max-width: 700px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 .form-group {
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
 }
 
 .form-label {
@@ -519,6 +523,10 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   transition: border-color var(--transition-fast);
+  position: relative;
+  z-index: 10;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-input:focus,
@@ -535,7 +543,13 @@
   font-family: var(--font-body);
 }
 
-.form-select option { background: var(--bg-card); }
+.form-select {
+  -webkit-appearance: menulist;
+  appearance: menulist;
+  cursor: pointer;
+}
+
+.form-select option { background: var(--bg-card); color: var(--text-primary); }
 
 .form-hint {
   font-size: 0.8rem;
